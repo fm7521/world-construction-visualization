@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "esnext",
+        "allowSyntheticDefaultImports": true,
+        "noUnusedLocals": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitReturns": true,
+        "strict": true,
+        "noImplicitAny": false,
+        "noImplicitThis": true,
+        "noUnusedParameters": true,
+        "allowJs": true,
+        "jsx": "preserve",
+        "checkJs": true,
+        "alwaysStrict": true,
+        "strictFunctionTypes": true
+    },
+    "files": [
+        "src/index.tsx",
+    ],
+    "include": []
+}

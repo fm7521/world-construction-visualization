@@ -1,0 +1,37 @@
+.Utterance {
+  width: 100%;
+  height: 100px;
+  background: green;
+  margin-bottom: 10px; }
+  .Utterance .avatar {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red; }
+    .Utterance .avatar img {
+      box-sizing: border-box;
+      padding: 5px;
+      width: 100%;
+      height: 100%; }
+  .Utterance .content {
+    position: relative;
+    background: purple;
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px; }
+    .Utterance .content .name {
+      font-size: 24px;
+      font-weight: bold;
+      display: block; }
+    .Utterance .content .text .part.selected {
+      background: yellow; }
+    .Utterance .content .fact {
+      cursor: pointer; }
+      .Utterance .content .fact.selected {
+        background: yellow; }
+  .Utterance.selected .content {
+    z-index: 100; }
+body {
+  font-family: sans-serif; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/

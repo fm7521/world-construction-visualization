@@ -1,0 +1,83 @@
+[
+    {
+        "player": "Mouse",
+        "utterance": [
+            "A mouse",
+            "pokes its head out of",
+            "its hole",
+            "to look for danger."
+        ],
+        "facts": [
+            {
+                "claim": "There is a mouse",
+                "proof": [
+                    0
+                ]
+            },
+            {
+                "claim": "There is a mouse hole",
+                "proof": [
+                    0,
+                    2
+                ]
+            },
+            {
+                "claim": "The mouse is poking its head out of the hole",
+                "proof": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            {
+                "claim": "The mouse is looking out for danger",
+                "proof": [
+                    0,
+                    3
+                ]
+            }
+        ]
+    },
+    {
+        "player": "Cat",
+        "utterance": [
+            "Nearby,",
+            "a cat",
+            "catches a whiff of the mouse",
+            "and walks over to the hole to investigate"
+        ],
+        "facts": [
+            {
+                "claim": "There is a cat",
+                "proof": [
+                    1
+                ]
+            },
+            {
+                "claim": "The cat is close to the mouse",
+                "proof": [
+                    0,
+                    1
+                ]
+            },
+            {
+                "claim": "The mouse has a scent",
+                "proof": [
+                    2
+                ]
+            },
+            {
+                "claim": "The cat can smell the mouse",
+                "proof": [
+                    2
+                ]
+            },
+            {
+                "claim": "The cat is moving towards the hole",
+                "proof": [
+                    3
+                ]
+            }
+        ]
+    }
+]

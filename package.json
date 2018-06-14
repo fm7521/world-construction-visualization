@@ -1,0 +1,38 @@
+{
+  "name": "world-construction-visualization",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "FieldMousse",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/react": "^16.3.2",
+    "@types/react-dom": "16.0.3",
+    "@types/webpack-env": "^1.13.6",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.9",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "4.7.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.20.1",
+    "ts-loader": "^4.4.1",
+    "tslint": "5.9.1",
+    "tslint-loader": "3.5.3",
+    "typescript": "^2.9.2",
+    "webpack": "^4.6.0"
+  }
+}
