@@ -14,6 +14,7 @@ export default function Utterance({ index }: { index: number }) {
                 <WCVContextConsumer>
                     {
                         ({
+                            startUtteranceRange,
                             selectUtteranceRange,
                             setHoverUtterance,
                             unsetHoverUtterance,
@@ -22,6 +23,7 @@ export default function Utterance({ index }: { index: number }) {
                             utteranceIsSelected,
                             selectFact,
                             unselectFact,
+                            hoverUtterance,
                             proofSelected,
                             factIsSelected,
                             data: {
@@ -31,11 +33,25 @@ export default function Utterance({ index }: { index: number }) {
                                     facts,
                                 }
                             }
-                        }) => (
-                                <div className={`Utterance ${utteranceIsSelected(index) ? "selected" : ""}`}
+                        }) => {
+                            const selected = utteranceIsSelected(index);
+                            function mouseMove({ buttons }: React.MouseEvent) {
+                                const leftButton = Boolean(buttons & 1);
+                                if (leftButton && !selected) {
+                                    selectUtteranceRange(index);
+                                }
+                            }
+                            function mouseDown({ buttons }: React.MouseEvent) {
+                                const leftButton = Boolean(buttons & 1);
+                                if (leftButton) {
+                                    startUtteranceRange(index);
+                                }
+                            }
+                            return (
+                                <div className={`Utterance ${selected ? "selected" : ""} ${hoverUtterance === index ? "hovered" : ""}`}
                                     onClick={() => setOpenUtterance(index)}
-                                    onMouseDown={() => selectUtteranceRange(index)}
-                                    onMouseEnter={() => setHoverUtterance(index)}
+                                    onMouseDown={mouseDown}
+                                    onMouseEnter={e => { setHoverUtterance(index); mouseMove(e) }}
                                     onMouseLeave={() => unsetHoverUtterance()}>
                                     <span className="avatar">
                                         <img src={getPlayerAvatar(player)} />
@@ -68,7 +84,7 @@ export default function Utterance({ index }: { index: number }) {
                                     </span>
                                 </div>
                             )
-                    }
+                        }}
                 </WCVContextConsumer>
             )}
         </AssetContextConsumer>

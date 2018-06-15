@@ -10,6 +10,7 @@ import Assets, { AssetDatabase } from "./Assets";
 import "./components/shared.scss";
 
 const data: Utterance[] = require("./data/sample_rp_1.json");
+data.push(...data, ...data);
 const assets: AssetDatabase = require("./data/assets.json");
 
 render(

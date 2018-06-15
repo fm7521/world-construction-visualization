@@ -52,9 +52,12 @@ class WCVState {
         const fact = this.data[utterance].facts[this.selectedFact[1]];
         return fact.proof.includes(part);
     }
+    startUtteranceRange = (index: number) => {
+        this.selectedUtteranceRange = [index, index];
+    }
     selectUtteranceRange = (index: number) => {
         if (this.selectedUtteranceRange[0] === -1) {
-            this.selectedUtteranceRange = [index, index];
+            this.startUtteranceRange(index);
         } else if (this.selectedUtteranceRange[0] <= index) {
             this.selectedUtteranceRange = [this.selectedUtteranceRange[0], index];
         } else {
@@ -118,7 +121,7 @@ export default class WCVStore extends Component<{ data: Utterance[] }, {}> {
     render() {
         const { children } = this.props;
         return (
-            <WCVContext.Provider value={{ ...this.wcvstate }}>
+            <WCVContext.Provider value={{ ...this.wcvstate } as WCVState}>
                 {children}
             </WCVContext.Provider>
         )

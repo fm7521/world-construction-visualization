@@ -5,6 +5,7 @@ $row_height: 100px;
     height: $row_height;
     background: green;
     margin-bottom: 10px;
+    user-select: none;
 
     .avatar {
         display: inline-block;
@@ -48,6 +49,7 @@ $row_height: 100px;
     }
 
     &.selected {
+        background: aqua;
         .content {
             z-index: 100;
         }
