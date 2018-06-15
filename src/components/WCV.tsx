@@ -4,6 +4,7 @@
 
 import ChatDisplay from "./ChatDisplay";
 import WCVStore from "../WCVStore";
+import DeltaFacts from "./DeltaFacts";
 
 import "./WCV.scss";
 
@@ -16,6 +17,7 @@ export default function WCV({ data }) {
                 </div>
                 <div className="right">
                     <div className="upper">
+                        <DeltaFacts />
                     </div>
                     <div className="lower">
 
