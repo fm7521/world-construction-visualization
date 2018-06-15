@@ -1,25 +1,31 @@
 .Utterance {
+  position: relative;
   width: 100%;
   height: 100px;
   background: green;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   user-select: none; }
   .Utterance .avatar {
+    position: relative;
     display: inline-block;
     width: 100px;
     height: 100px;
-    background: red; }
+    background: red;
+    z-index: 95; }
     .Utterance .avatar img {
       box-sizing: border-box;
       padding: 5px;
       width: 100%;
       height: 100%; }
   .Utterance .content {
-    position: relative;
+    position: absolute;
+    left: 0px;
     background: purple;
-    vertical-align: top;
-    display: inline-block;
-    padding: 10px; }
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 110px;
+    box-sizing: border-box; }
     .Utterance .content .name {
       font-size: 24px;
       font-weight: bold;
@@ -33,7 +39,31 @@
   .Utterance.selected {
     background: aqua; }
     .Utterance.selected .content {
-      z-index: 100; }
+      z-index: 90; }
+.WCV {
+  position: relative;
+  width: 900px;
+  height: 700px;
+  background: orange; }
+  .WCV .left {
+    width: 50%;
+    display: inline-block;
+    overflow-y: scroll; }
+    .WCV .left .ChatDisplay {
+      height: 100%; }
+  .WCV .right {
+    vertical-align: top;
+    background: yellowgreen;
+    width: 50%;
+    display: inline-block; }
+    .WCV .right .upper {
+      width: 100%;
+      height: 50%;
+      background: red; }
+    .WCV .right .lower {
+      width: 100%;
+      height: 50%;
+      background: gainsboro; }
 body {
   font-family: sans-serif; }
 

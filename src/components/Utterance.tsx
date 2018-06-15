@@ -1,3 +1,4 @@
+import FactsDisplay from "./FactsDisplay";
 import { WCVContextConsumer } from "../WCVStore";
 import { AssetContextConsumer } from "../Assets";
 
@@ -21,11 +22,8 @@ export default function Utterance({ index }: { index: number }) {
                             setOpenUtterance,
                             openUtterance,
                             utteranceIsSelected,
-                            selectFact,
-                            unselectFact,
                             hoverUtterance,
                             proofSelected,
-                            factIsSelected,
                             data: {
                                 [index]: {
                                     player,
@@ -70,15 +68,7 @@ export default function Utterance({ index }: { index: number }) {
                                         {
                                             index === openUtterance &&
                                             (<div className="opened">
-                                                <ul>
-                                                    {facts.map(({ claim }, factIndex) => (
-                                                        <li key={factIndex} className={`fact ${factIsSelected(index, factIndex) ? "selected" : ""}`}
-                                                            onMouseEnter={() => selectFact(index, factIndex)}
-                                                            onMouseLeave={() => unselectFact()}>
-                                                            {claim}
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                                <FactsDisplay facts={facts} utterance={index} />
                                             </div>)
                                         }
                                     </span>

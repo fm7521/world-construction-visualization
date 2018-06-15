@@ -5,11 +5,23 @@
 import ChatDisplay from "./ChatDisplay";
 import WCVStore from "../WCVStore";
 
+import "./WCV.scss";
 
 export default function WCV({ data }) {
     return (
-        <WCVStore data={data}>
-            <ChatDisplay />
-        </WCVStore>
+        <div className="WCV">
+            <WCVStore data={data}>
+                <div className="left">
+                    <ChatDisplay />
+                </div>
+                <div className="right">
+                    <div className="upper">
+                    </div>
+                    <div className="lower">
+
+                    </div>
+                </div>
+            </WCVStore>
+        </div>
     )
 }
