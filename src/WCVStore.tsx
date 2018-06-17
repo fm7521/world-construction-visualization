@@ -38,6 +38,13 @@ class WCVState {
     constructor(data: Utterance[]) {
         this.data = data;
     }
+    private setDefaults() {
+        this.selectedUtteranceRange = [-1, -1];
+        this.utteranceProgress = -1;
+        this.hoverUtterance = -1;
+        this.openUtterance = -1;
+        this.selectedFact = [-1, -1];
+    }
     loadData = (data: Utterance[]) => {
         this.data = data;
     }
@@ -84,6 +91,9 @@ class WCVState {
     }
     unselectFact = () => {
         this.selectedFact = [-1, -1];
+    }
+    restart = () => {
+        this.setDefaults();
     }
 }
 

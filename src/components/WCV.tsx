@@ -5,6 +5,7 @@
 import ChatDisplay from "./ChatDisplay";
 import WCVStore from "../WCVStore";
 import DeltaFacts from "./DeltaFacts";
+import ErrorGuard from "./ErrorGuard";
 
 import "./WCV.scss";
 
@@ -12,17 +13,19 @@ export default function WCV({ data }) {
     return (
         <div className="WCV">
             <WCVStore data={data}>
-                <div className="left">
-                    <ChatDisplay />
-                </div>
-                <div className="right">
-                    <div className="upper">
-                        <DeltaFacts />
+                <ErrorGuard>
+                    <div className="left">
+                        <ChatDisplay />
                     </div>
-                    <div className="lower">
+                    <div className="right">
+                        <div className="upper">
+                            <DeltaFacts />
+                        </div>
+                        <div className="lower">
 
+                        </div>
                     </div>
-                </div>
+                </ErrorGuard>
             </WCVStore>
         </div>
     )
