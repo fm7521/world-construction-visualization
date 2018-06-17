@@ -3,37 +3,56 @@
         "player": "Mouse",
         "utterance": [
             "A mouse",
-            "pokes its head out of",
-            "its hole",
-            "to look for danger."
+            "pokes",
+            "his",
+            "head out of",
+            "his",
+            "hole",
+            "to look for danger"
         ],
         "facts": [
             {
                 "claim": "There is a mouse",
+                "summary": "Mouse",
                 "proof": [
                     0
                 ]
             },
             {
-                "claim": "There is a mouse hole",
+                "claim": "The mouse is male",
+                "summary": "Male Mouse",
                 "proof": [
                     0,
-                    2
+                    2,
+                    4
                 ]
             },
             {
-                "claim": "The mouse is poking its head out of the hole",
+                "claim": "There is a mouse hole",
+                "summary": "Mouse hole",
+                "proof": [
+                    0,
+                    4,
+                    5
+                ]
+            },
+            {
+                "claim": "The mouse is poking his head out of the hole",
+                "summary": "Mouse poking head out hole",
                 "proof": [
                     0,
                     1,
-                    2
+                    2,
+                    4,
+                    5
                 ]
             },
             {
                 "claim": "The mouse is looking out for danger",
+                "summary": "Mouse watching for danger",
                 "proof": [
                     0,
-                    3
+                    6
                 ]
             }
         ]
@@ -49,12 +68,14 @@
         "facts": [
             {
                 "claim": "There is a cat",
+                "summary": "Cat",
                 "proof": [
                     1
                 ]
             },
             {
                 "claim": "The cat is close to the mouse",
+                "summary": "Cat near mouse",
                 "proof": [
                     0,
                     1
@@ -62,20 +83,44 @@
             },
             {
                 "claim": "The mouse has a scent",
+                "summary": "Mouse smells",
                 "proof": [
                     2
                 ]
             },
             {
                 "claim": "The cat can smell the mouse",
+                "summary": "Cat smells mouse",
                 "proof": [
                     2
                 ]
             },
             {
                 "claim": "The cat is moving towards the hole",
+                "summary": "Cat moving to hole",
                 "proof": [
                     3
+                ]
+            }
+        ]
+    },
+    {
+        "player": "Mouse",
+        "utterance": [
+            "The mouse darts out of his hole"
+        ],
+        "facts": [
+            {
+                "claim": "The mouse has left his hole",
+                "summary": "Mouse leaves hole",
+                "proof": [
+                    0
+                ],
+                "redacts": [
+                    {
+                        "utterance": 0,
+                        "fact": 3
+                    }
                 ]
             }
         ]

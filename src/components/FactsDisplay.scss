@@ -1,0 +1,21 @@
+.FactsDisplay {
+    .fact {
+        cursor: pointer;
+        width: fit-content;
+
+        &.selected {
+            background: yellow;
+        }
+        &.summary {
+            display: inline-block;
+            background: purple;
+            border-radius: 30px; 
+        }
+    }
+    .Avatar {
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

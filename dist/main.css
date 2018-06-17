@@ -1,3 +1,16 @@
+.FactsDisplay .fact {
+  cursor: pointer;
+  width: fit-content; }
+  .FactsDisplay .fact.selected {
+    background: yellow; }
+  .FactsDisplay .fact.summary {
+    display: inline-block;
+    background: purple;
+    border-radius: 30px; }
+
+.FactsDisplay .Avatar img {
+  width: 30px;
+  height: 30px; }
 .Utterance {
   position: relative;
   width: 100%;
@@ -5,14 +18,14 @@
   background: green;
   margin-bottom: 5px;
   user-select: none; }
-  .Utterance .avatar {
+  .Utterance .Avatar {
     position: relative;
     display: inline-block;
     width: 100px;
     height: 100px;
     background: red;
     z-index: 95; }
-    .Utterance .avatar img {
+    .Utterance .Avatar img {
       box-sizing: border-box;
       padding: 5px;
       width: 100%;
@@ -32,10 +45,6 @@
       display: block; }
     .Utterance .content .text .part.selected {
       background: yellow; }
-    .Utterance .content .fact {
-      cursor: pointer; }
-      .Utterance .content .fact.selected {
-        background: yellow; }
   .Utterance.selected {
     background: aqua; }
     .Utterance.selected .content {

@@ -9,7 +9,6 @@ export default function ChatDisplay({ }) {
     return (
         <WCVContextConsumer>
             {({
-                changeProgress,
                 data,
             }) => (
                     <div className="ChatDisplay">
@@ -17,11 +16,6 @@ export default function ChatDisplay({ }) {
                             {data.map(({ }, i) => (
                                 <Utterance key={i} index={i} />
                             ))}
-                        </div>
-                        <div className="footer">
-                            <button onClick={() => changeProgress(+1)}>
-                                More
-                            </button>
                         </div>
                     </div>
                 )

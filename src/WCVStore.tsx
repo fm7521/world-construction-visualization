@@ -13,12 +13,19 @@ export interface Utterance {
     // Contains the utterance string broken up into parts that individually prove some fact
     readonly utterance: string[];
     // Facts that can be derived from the utterance
-    readonly facts: {
+    readonly facts: Readonly<{
         // Human readable description of the fact
         claim: string;
+        // Brief summary of claim
+        summary: string;
         // The indices in utterance array that are used to derive this fact
         proof: number[];
-    }[];
+        // Link other Utterance facts that are redacted by this fact
+        redacts?: Readonly<{
+            utterance: number;
+            fact: number;
+        }>[];
+    }>[];
 }
 
 class WCVState {
@@ -26,24 +33,24 @@ class WCVState {
     public data: Utterance[];
     // A lower and upper index range to select from data
     public selectedUtteranceRange: [number, number] = [-1, -1];
-    // The index of the highest utterance that has been revealed by the user
-    public utteranceProgress: number = -1;
     // The utterance that the user has hovered over
     public hoverUtterance: number = -1;
     // The utterance that the user has opened
     public openUtterance: number = -1;
     // The utterance fact that is selected by the user, contains utterance index and then fact index
     public selectedFact: [number, number] = [-1, -1];
+    // The utterance part that the user has selected, contains utterance index and then part index
+    public selectedPart: [number, number] = [-1, -1];
 
     constructor(data: Utterance[]) {
         this.data = data;
     }
     private setDefaults() {
         this.selectedUtteranceRange = [-1, -1];
-        this.utteranceProgress = -1;
         this.hoverUtterance = -1;
         this.openUtterance = -1;
         this.selectedFact = [-1, -1];
+        this.selectedPart = [-1, -1];
     }
     loadData = (data: Utterance[]) => {
         this.data = data;
@@ -71,9 +78,6 @@ class WCVState {
             this.selectedUtteranceRange = [index, this.selectedUtteranceRange[1]];
         }
     }
-    changeProgress = (delta: number) => {
-        this.utteranceProgress += delta;
-    }
     setHoverUtterance = (index: number) => {
         this.hoverUtterance = index;
     }
@@ -91,6 +95,12 @@ class WCVState {
     }
     unselectFact = () => {
         this.selectedFact = [-1, -1];
+    }
+    selectPart = (utterance: number, part: number) => {
+        this.selectedPart = [utterance, part];
+    }
+    unselectPart = () => {
+        this.selectedPart = [-1, -1];
     }
     restart = () => {
         this.setDefaults();

@@ -14,7 +14,10 @@ export default function DeltaFacts({ }) {
                     facts = (
                         data.slice(selectedUtteranceRange[0], selectedUtteranceRange[1] + 1)
                             .map(({ facts }, utterance) => (
-                                <FactsDisplay key={utterance} facts={facts} utterance={utterance + selectedUtteranceRange[0]} />
+                                <FactsDisplay key={utterance}
+                                    displayFacts={facts}
+                                    summaryOnly
+                                    utterance={utterance + selectedUtteranceRange[0]} />
                             ))
                     );
                 } else {
