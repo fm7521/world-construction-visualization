@@ -40,9 +40,8 @@ export default function FactsDisplay({ displayFacts, utterance, summaryOnly = fa
                                 <Avatar player={player} />
                             )}
                             {displayFacts.map(({ claim, summary, redacts }, factIndex) => (
-                                <Fragment>
-                                    <div key={factIndex}
-                                        className={`fact ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
+                                <Fragment key={factIndex}>
+                                    <div className={`fact ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
                                         onMouseEnter={() => selectFact(utterance, factIndex)}
                                         onMouseLeave={() => unselectFact()}>
                                         {summaryOnly ? summary : claim}
@@ -53,7 +52,7 @@ export default function FactsDisplay({ displayFacts, utterance, summaryOnly = fa
                                                 className={`fact redaction ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
                                                 onMouseEnter={() => selectFact(utterance, factIndex)}
                                                 onMouseLeave={() => unselectFact()}>
-                                                {(data[redactUtterance].facts[redactFact])[(summaryOnly ? "summary"  : "claim")]}
+                                                {(data[redactUtterance].facts[redactFact])[(summaryOnly ? "summary" : "claim")]}
                                             </div>
                                         ))
                                     )}

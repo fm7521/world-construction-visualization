@@ -49,6 +49,11 @@
     background: aqua; }
     .Utterance.selected .content {
       z-index: 90; }
+  .Utterance .opened {
+    background: purple; }
+.DeltaFacts .TimeFrameSummary .Avatar img {
+  width: 60px;
+  height: 60px; }
 .ErrorGuard {
   text-align: center;
   position: absolute;

@@ -3,7 +3,10 @@
  */
 
 import FactsDisplay from "./FactsDisplay";
-import { WCVContextConsumer } from "../WCVStore";
+import { WCVContextConsumer, Utterance } from "../WCVStore";
+import Avatar from "./Avatar";
+
+import "./DeltaFacts.scss";
 
 export default function DeltaFacts({ }) {
     return (
@@ -25,9 +28,14 @@ export default function DeltaFacts({ }) {
                         <h3>Select Utterances on the left to display changes</h3>
                     );
                 }
+                const {
+                    [selectedUtteranceRange[0]]: start,
+                    [selectedUtteranceRange[1]]: end,
+                } = data;
                 return (
                     <div className="DeltaFacts">
                         <h1>Delta World</h1>
+                        {start && <TimeFrameSummary start={start} end={end} />}
                         <div className="fact-box">
                             {facts}
                         </div>
@@ -35,5 +43,22 @@ export default function DeltaFacts({ }) {
                 );
             }}
         </WCVContextConsumer>
+    );
+}
+
+function TimeFrameSummary({ start, end }: { start: Utterance, end: Utterance }) {
+    return (
+        <div className="TimeFrameSummary">
+            <div className="description">Showing all facts that were added and removed between these two utterances</div>
+            <div className="start">
+                <Avatar player={start.player} />
+                <span className="utterance">{start.utterance.join(" ")}</span>
+            </div>
+            ...
+            <div className="end">
+                <Avatar player={end.player} />
+                <span className="utterance">{end.utterance.join(" ")}</span>
+            </div>
+        </div>
     );
 }
