@@ -1,20 +1,24 @@
+@import "theme";
+
 $row_height: 100px;
 
 .Utterance {
     position: relative;
     width: 100%;
-    height: $row_height;
-    background: green;
+    cursor: pointer;
+    background: $theme_utterance_default;
     margin-bottom: 5px;
     user-select: none;
 
     .Avatar {
         position: relative;
-        display: inline-block;
         width: $row_height;
         height: $row_height;
-        background: red;
         z-index: 95;
+        margin-left: -17px;
+        margin-top: -17px;
+        margin-bottom: (-(17 / 2)) px;
+        float: left;
 
         img {
             box-sizing: border-box;
@@ -23,39 +27,54 @@ $row_height: 100px;
             height: 100%;
         }
     }
-
-    .content {
-        position: absolute;
-        left: 0px;
-        background: purple;
-        width: 100%;
-        height: 100%;
-        padding: 10px;
-        padding-left: $row_height + 10;
-        box-sizing: border-box;
-
-        .name {
-            font-size: 24px;
-            font-weight: bold;
-            display: block;
-        }
-
-        .text .part {
-            &.selected {
-                background: yellow;
-            }
+    .part {
+        &.selected {
+            background: $theme_text_highlight;
         }
     }
+    .content {
+        display: block;
+        box-sizing: border-box;
+        color: black;
+        min-height: $row_height;
 
-    &.selected {
-        background: aqua;
-
-        .content {
-            z-index: 90;
+        .name {
+            display: block;
+            font-weight: bolder;
+            font-size: 25px;
         }
+
+        .text {
+            margin-bottom: 10px;
+        }
+
+        padding-top: 17px;
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    &.selected, &.selected .opened {
+        background: $theme_utterance_selected;
+    }
+
+    &.hovered, &.hovered .opened {
+        background: $theme_utterance_hovered;
+    }
+
+    &.selected.hovered, &.selected.hovered .opened {
+        background: $theme_utterance_selected_hovered;
     }
 
     .opened {
-        background: purple;
+        position: absolute;
+        left: 0px;
+
+        padding: 17px;
+        padding-right: 17px;
+        box-sizing: border-box;
+        width: 100%;
+        background: $theme_utterance_default;
+        z-index: 120;
+        border-bottom: solid black 30px;
     }
 }

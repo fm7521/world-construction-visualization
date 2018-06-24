@@ -1,0 +1,12 @@
+$theme_text_background: rgb(231, 231, 231);
+$theme_text_highlight: darken(mix($theme_text_background, yellow), 10%);
+
+$theme_darkest: $theme_text_background;
+$theme_darker: rgb(211, 211, 211);
+$theme_padd_squished: 10px;
+
+
+$theme_utterance_default: $theme_text_background;
+$theme_utterance_hovered: darken($theme_utterance_default, 7%);
+$theme_utterance_selected: darken(mix($theme_utterance_default, rgb(146, 146, 185)), 7%);
+$theme_utterance_selected_hovered: darken($theme_utterance_selected, 7%);

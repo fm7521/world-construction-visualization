@@ -1,8 +1,21 @@
+@import "theme";
+
 .DeltaFacts {
     .TimeFrameSummary {
-        .Avatar img {
-            width: 60px;
-            height: 60px;
+        .quote {
+            background: $theme_darker;
+            padding: $theme_padd_squished;
+
+            .Avatar img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .text {
+                vertical-align: top;
+                padding: 15px;
+                display: inline-block;
+            }
         }
     }
 }

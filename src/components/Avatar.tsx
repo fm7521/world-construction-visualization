@@ -9,7 +9,7 @@ export default function Avatar({ player }) {
         <AssetContextConsumer>
             {({ getPlayerAvatar }) => (
                 <span className="Avatar">
-                    <img src={getPlayerAvatar(player)} />
+                    <img title={player} alt={player} src={getPlayerAvatar(player)} />
                 </span>
             )}
         </AssetContextConsumer>

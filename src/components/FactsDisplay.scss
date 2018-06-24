@@ -1,17 +1,32 @@
-.FactsDisplay {
-    .fact {
-        cursor: pointer;
-        width: fit-content;
+@import "theme";
 
-        &.selected {
-            background: yellow;
-        }
-        &.summary {
-            display: inline-block;
-            background: purple;
-            border-radius: 30px; 
+.FactsDisplay {
+    .facts {
+        margin-left: 10px;
+
+        .fact {
+            cursor: pointer;
+            width: fit-content;
+
+            &.selected {
+                background: $theme_text_highlight;
+            }
+
+            &.summary {
+                display: inline-block;
+                padding: 5px;
+                background: $theme_darker;
+                border: 3px;
+                border-style: inset;
+                border-radius: 30px;
+
+                &.selected {
+                    background: $theme_text_highlight;
+                }
+            }
         }
     }
+
     .Avatar {
         img {
             width: 30px;

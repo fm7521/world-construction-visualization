@@ -39,25 +39,28 @@ export default function FactsDisplay({ displayFacts, utterance, summaryOnly = fa
                             {summaryOnly && (
                                 <Avatar player={player} />
                             )}
-                            {displayFacts.map(({ claim, summary, redacts }, factIndex) => (
-                                <Fragment key={factIndex}>
-                                    <div className={`fact ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
-                                        onMouseEnter={() => selectFact(utterance, factIndex)}
-                                        onMouseLeave={() => unselectFact()}>
-                                        {summaryOnly ? summary : claim}
-                                    </div>
-                                    {redacts && (
-                                        redacts.map(({ utterance: redactUtterance, fact: redactFact }) => (
-                                            <div key={factIndex}
-                                                className={`fact redaction ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
-                                                onMouseEnter={() => selectFact(utterance, factIndex)}
-                                                onMouseLeave={() => unselectFact()}>
-                                                {(data[redactUtterance].facts[redactFact])[(summaryOnly ? "summary" : "claim")]}
-                                            </div>
-                                        ))
-                                    )}
-                                </Fragment>
-                            ))}
+                            <span className="facts">
+                                {displayFacts.map(({ claim, summary, redacts }, factIndex) => (
+                                    <Fragment key={factIndex}>
+                                        <div className={`fact ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
+                                            onMouseEnter={() => selectFact(utterance, factIndex)}
+                                            onMouseLeave={() => unselectFact()}>
+                                            {summaryOnly ? summary : claim}
+                                        </div>
+                                        {redacts && (
+                                            redacts.map(({ utterance: redactUtterance, fact: redactFact }) => (
+                                                <div key={factIndex}
+                                                    className={`fact redaction ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
+                                                    onMouseEnter={() => selectFact(utterance, factIndex)}
+                                                    onMouseLeave={() => unselectFact()}>
+                                                    {(data[redactUtterance].facts[redactFact])[(summaryOnly ? "summary" : "claim")]}
+                                                </div>
+                                            ))
+                                        )}
+                                    </Fragment>
+                                ))}
+                            </span>
+                            <hr />
                         </Fragment>
                     );
                 }}

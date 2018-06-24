@@ -60,8 +60,8 @@ export default function Utterance({ index }: { index: number }) {
                             onMouseDown={mouseDown}
                             onMouseEnter={e => { setHoverUtterance(index); mouseMove(e) }}
                             onMouseLeave={() => unsetHoverUtterance()}>
-                            <Avatar player={player} />
                             <span className="content">
+                                <Avatar player={player} />
                                 <span className="name">
                                     {player}
                                 </span>
@@ -75,13 +75,15 @@ export default function Utterance({ index }: { index: number }) {
                                                 </span>
                                     ))}
                                 </span>
-                                {
-                                    index === openUtterance &&
-                                    (<div className="opened">
-                                        <FactsDisplay displayFacts={facts} utterance={index} />
-                                    </div>)
-                                }
                             </span>
+                            {
+                                index === openUtterance &&
+                                (<div className="opened">
+                                    <hr />
+                                    <h3>Facts</h3>
+                                    <FactsDisplay displayFacts={facts} utterance={index} />
+                                </div>)
+                            }
                         </div>
                     )
                 }}

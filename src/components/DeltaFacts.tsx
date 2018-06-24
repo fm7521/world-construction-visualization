@@ -5,6 +5,7 @@
 import FactsDisplay from "./FactsDisplay";
 import { WCVContextConsumer, Utterance } from "../WCVStore";
 import Avatar from "./Avatar";
+import { clipText } from "../util";
 
 import "./DeltaFacts.scss";
 
@@ -50,14 +51,14 @@ function TimeFrameSummary({ start, end }: { start: Utterance, end: Utterance }) 
     return (
         <div className="TimeFrameSummary">
             <div className="description">Showing all facts that were added and removed between these two utterances</div>
-            <div className="start">
+            <div className="quote start">
                 <Avatar player={start.player} />
-                <span className="utterance">{start.utterance.join(" ")}</span>
+                <span className="text">{clipText(30, start.utterance.join(" "))}</span>
             </div>
             ...
-            <div className="end">
+            <div className="quote end">
                 <Avatar player={end.player} />
-                <span className="utterance">{end.utterance.join(" ")}</span>
+                <span className="text">{clipText(30, end.utterance.join(" "))}</span>
             </div>
         </div>
     );

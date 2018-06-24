@@ -21,9 +21,6 @@ export default function WCV({ data }) {
                         <div className="upper">
                             <DeltaFacts />
                         </div>
-                        <div className="lower">
-
-                        </div>
                     </div>
                 </ErrorGuard>
             </WCVStore>

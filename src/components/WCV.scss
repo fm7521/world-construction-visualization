@@ -1,12 +1,15 @@
+@import "theme";
+
 .WCV {
     position: relative;
     width: 900px;
     height: 700px;
-    background: orange;
+    background: $theme_darkest;
 
     .left {
         width: 50%;
         display: inline-block;
+        height: 100%;
         overflow-y: scroll;
 
         .ChatDisplay {
@@ -16,20 +19,14 @@
 
     .right {
         vertical-align: top;
-        background: yellowgreen;
+        background: theme_darkest;
         width: 50%;
+        height: 100%;
         display: inline-block;
+        overflow-y: scroll;
 
         .upper {
             width: 100%;
-            height: 50%;
-            background: red;
-        }
-
-        .lower {
-            width: 100%;
-            height: 50%;
-            background: gainsboro;
         }
     }
 }
