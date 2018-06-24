@@ -9,12 +9,19 @@ import Assets, { AssetDatabase } from "./Assets";
 
 import "./components/shared.scss";
 
-const data: Utterance[] = require("./data/sample_rp_1.json");
-data.push(...data, ...data, ...data);
-const assets: AssetDatabase = require("./data/assets.json");
+export function create(id: string, data: Utterance[], assets: AssetDatabase) {
+    const container = document.getElementById(id);
+    if (container === null) throw new Error(`The id "${id}" is not valid`);
+    render(
+        (<Assets data={assets}>
+            <WCV data={data} />
+        </Assets>),
+        container);
+}
 
-render(
-    (<Assets data={assets}>
-        <WCV data={data} />
-    </Assets>),
-    document.getElementById("app"));
+const resourceLoader = require.context("./data", true, /\.json$/);
+export const resources = {};
+resourceLoader.keys().forEach(resourcePath => {
+    const resource = resourceLoader(resourcePath);
+    resources[(resourcePath.match(/\/(.*)\./) as RegExpMatchArray)[1]] = resource;
+});
