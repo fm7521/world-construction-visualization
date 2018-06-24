@@ -133,7 +133,7 @@
                 ],
                 "redacts": [
                     {
-                        "utterance": 0,
+                        "utterance": 1,
                         "fact": 3
                     }
                 ]

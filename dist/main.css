@@ -8,12 +8,22 @@
     .FactsDisplay .facts .fact.summary {
       display: inline-block;
       padding: 5px;
+      padding-right: 20px;
       background: lightgray;
       border: 3px;
       border-style: inset;
       border-radius: 30px; }
       .FactsDisplay .facts .fact.summary.selected {
         background: #efef45; }
+      .FactsDisplay .facts .fact.summary.redaction {
+        background: #e96a6a; }
+        .FactsDisplay .facts .fact.summary.redaction.selected {
+          background: #e96a6a; }
+    .FactsDisplay .facts .fact .symbol {
+      text-align: center;
+      font-weight: bold;
+      display: inline-block;
+      width: 30px; }
 
 .FactsDisplay .Avatar img {
   width: 30px;
@@ -113,5 +123,3 @@
       width: 100%; }
 body {
   font-family: sans-serif; }
-
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJtYWluLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/

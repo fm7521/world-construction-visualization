@@ -45,6 +45,7 @@ export default function FactsDisplay({ displayFacts, utterance, summaryOnly = fa
                                         <div className={`fact ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
                                             onMouseEnter={() => selectFact(utterance, factIndex)}
                                             onMouseLeave={() => unselectFact()}>
+                                            <span className="symbol">+</span>
                                             {summaryOnly ? summary : claim}
                                         </div>
                                         {redacts && (
@@ -53,6 +54,7 @@ export default function FactsDisplay({ displayFacts, utterance, summaryOnly = fa
                                                     className={`fact redaction ${factSelected(factIndex)} ${summaryOnly ? "summary" : ""}`}
                                                     onMouseEnter={() => selectFact(utterance, factIndex)}
                                                     onMouseLeave={() => unselectFact()}>
+                                                    <span className="symbol">-</span>
                                                     {(data[redactUtterance].facts[redactFact])[(summaryOnly ? "summary" : "claim")]}
                                                 </div>
                                             ))

@@ -25,7 +25,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts", ".tsx", ".css", ".scss"],
   },
-  devtool: "inline-source-map",
+  // devtool: "inline-source-map",
   module: {
     rules: [
       {
@@ -35,7 +35,7 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              presets: ["env", "react"],
+              presets: [/*"env",*/ "react"],
               plugins: ["transform-object-rest-spread", "syntax-dynamic-import"],
             }
           },
