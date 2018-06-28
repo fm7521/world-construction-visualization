@@ -3,11 +3,13 @@
 .WCV {
     all: initial;
     display: block;
-    font-family: Georgia,serif;
+    font-family: Ubuntu, sans-serif;
     position: relative;
     width: 900px;
     height: 700px;
     background: $theme_darkest;
+
+    @include anti_ghost;
 
     .left {
         width: 50%;

@@ -10,3 +10,12 @@ $theme_utterance_default: $theme_text_background;
 $theme_utterance_hovered: darken($theme_utterance_default, 7%);
 $theme_utterance_selected: darken(mix($theme_utterance_default, rgb(146, 146, 185)), 7%);
 $theme_utterance_selected_hovered: darken($theme_utterance_selected, 7%);
+
+/**
+ * Counter the Casper theme on ghost
+ */
+@mixin anti_ghost {
+    hr, img {
+        margin: 0px !important;
+    }
+}
